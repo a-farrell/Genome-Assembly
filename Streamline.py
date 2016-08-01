@@ -507,7 +507,9 @@ def readgbkprot(filename):
 			i=0
 			a=0
 		if "/locus_tag" in line and i==1:
-			SP = line[33:44]
+			SPna = line[33:] 
+			SPn = SPna.replace("\"","")
+			SP = SPn.replace("\n","")
 		if "/translation" in line and i==1:
 			seq = line[35:] 
 			a=1		
